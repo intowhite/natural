@@ -1,0 +1,19 @@
+@import 'functions';
+@import 'mixins';
+@import 'vars';
+@import 'reset';
+@import 'nav';
+@import 'search';
+@import 'hero';
+@import 'app';
+@import 'natural';
+@import 'links';
+@import 'footer';
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+}

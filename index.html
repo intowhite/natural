@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="natdemo">
+<head>
+	<meta charset="UTF-8">
+	<title>Natural</title>
+</head>
+<body ng-controller="natController">
+	<div class="Nav">
+		<div class="logo">
+			<img src="./public/img/logo.jpg" alt="">
+		</div>
+		<div class="links">
+			<ul>
+				<li>
+					<a href="#">Solutions</a>
+				</li>
+				<li>
+					<a href="#">Wins</a>
+				</li>
+				<li>
+					<a href="#">People</a>
+				</li>
+				<li>
+					<a href="#">Demo Center</a>
+				</li>
+			</ul>
+		</div>
+		<div class="user">
+			<a href="#" class="userlink">
+				<img src="./public/img/avatar_cory.png" alt=""/>
+				<div class="username">Cory Micek {{meow.cat}}</div>
+			</a>
+			<div class="logout"><a href="#">Log Out</a></div>
+		</div>
+	</div>
+	<div class="Search">
+		<input type="text" placeholder="Search Solution Center...">
+	</div>
+	<div class="Hero" style="">
+		<div class="text">
+			Welcome, <span class="color">Cory!</span> What would you like to accomplish today?
+		</div>
+	</div>
+	<div class="Natural">
+		<div class="form">
+			I need a 
+			<div class="select" 
+			ng-click="select_click(select)"
+			ng-class="{'show': isShown}">
+				<div class="checked">{{checked.display}}</div>
+				<div class="options">
+					<div class="option" 
+					ng-click="category_click(category)" 
+					ng-repeat="category in categories"
+					ng-class="{checked: category==checked}">
+						{{category.display}}
+					</div>
+				</div>
+			</div>
+			for 
+			<div class="select">
+				<div class="checked">any industry</div>
+				<div class="options"></div>
+			</div>
+			<br/>
+			and
+			<div class="select">
+				<div class="checked">any product</div>
+				<div class="options"></div>
+			</div>
+			.
+		</div>
+		<button ng-click="meow()">Find it!</button>
+		<div class="results"></div>
+	</div>
+	<div class="Links">
+		<div class="line"></div>
+		<div class="solutions-wins">
+			<div class="solutions">
+				<img src="./public/img/screen-shot-2015-10-27-at-40718-p-m@3x.png" alt="">
+				<a href="#">Submit a Solution</a>
+				<a href="#">View my Solutions</a>
+			</div>
+			<div class="wins">
+				<img src="./public/img/screen-shot-2015-10-27-at-23907-p-m-copy-2@3x.png" alt="">
+				<a href="#">Submit a Solution Win</a>
+				<a href="#">View my Solution Wins</a>
+			</div>
+		</div>
+	</div>
+	<div class="Footer">
+		<div class="links">
+			<ul>
+				<li>Solutions</li>
+				<li>Standard View</li>
+				<li>Create an Incident</li>
+			</ul>
+		</div>
+	</div>
+	<script src="http://localhost:8080/public/bundle.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+
+</body>
+</html>

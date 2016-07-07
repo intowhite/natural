@@ -1,0 +1,33 @@
+// setup for REM units
+html {
+	font-size: 62.5%;
+	font-family: sans-serif;
+	line-height: 1;
+}
+
+// border-box fix for all elements
+html {
+	box-sizing: border-box;
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
+}
+
+// remove browser default padding/margin
+body,html {
+	margin: 0;
+	padding: 0;
+}
+
+// stupid jerk list
+ul,li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// ugh
+a {
+	color: inherit;
+	text-decoration: inherit;
+}

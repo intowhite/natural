@@ -1,0 +1,29 @@
+.Links {
+	.line {
+		width: 26.85rem;
+		height: 1px;
+		background-color: #D8D8D8;
+		margin: 0 auto;
+	}
+	.solutions-wins {
+		width: 42rem;
+		margin: 0 auto;
+		overflow: hidden;
+		.solutions, .wins {
+			width: 50%;
+			float: left;
+			padding: 3.25rem 1rem;
+			text-align: center;
+			img {
+				width: 4.8rem;
+			}
+			a {
+				text-decoration: underline;
+				font-size: 1.4rem;
+				display: block;
+				padding: 1.4rem 1rem;
+				color: $dark_text;
+			}
+		}
+	}
+}

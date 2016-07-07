@@ -1,0 +1,70 @@
+.Natural {
+	padding: 3.6rem;
+	text-align: center;
+	.form {
+		margin: 0 auto;
+		text-align: center;
+		font-size: 2.4rem;
+		line-height: 4rem;
+		.select {
+			display: inline-block;
+			position: relative;
+			&.show {
+				.options {
+					visibility: visible;
+					opacity: 1;
+					transform: translateY(-50%) scale(1);
+					transition: visibility 0s 0s, opacity 0.3s, transform 0.3s;
+				}
+			}
+			.checked {
+				color: $accent_color;
+				text-decoration: underline;
+			}
+			.options {
+				visibility: hidden;
+				position: absolute;
+				top: 0%;
+				background-color: $accent_color;
+				top: 50%;
+				font-size: 80%;
+				transform: translateY(-40%) scale(0.9);
+				opacity: 0;
+				width: auto;
+				z-index: 999;
+				transition: visibility 0s 0.3s, opacity 0.3s, transform 0.3s;
+				color: $lighter_text;
+				padding: 1rem;
+				.option {
+					white-space: nowrap;
+					cursor: pointer;
+					padding: 0.3rem 0.5rem;
+					font-size: 10px;
+					line-height: 1;
+					text-align: left;
+					&.checked {
+						color: $navbg;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+	button {
+		background-color: $accent_color;
+		border: none;
+		font-size: 1.55rem;
+		border-radius: 2px;
+		line-height: 1;
+		// height: u(30);
+		// line-height: u(30);
+		padding: 0.7rem 1.5rem;
+		font-weight: 100;
+		color: $lighter_text;
+		margin-top: 2rem;
+		cursor: pointer;
+		&:hover {
+			background-color: darken($accent_color,10%);
+		}
+	}
+}

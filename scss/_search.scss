@@ -1,0 +1,17 @@
+.Search {
+	background-color: $search_bg;
+	border-top: 1px solid $search_border;
+	padding: 0.9rem 1rem;
+
+	input {
+		height: 1.5rem;
+		width: 100%;
+		border: none;
+		padding: 0.9rem 0.8rem;
+		font-weight: 100;
+		color: lighten($search_bg,20%);
+		font-size: 0.3rem;
+		line-height: 1.6rem;
+		border: 1px solid #f3f3f3;
+	}
+}
