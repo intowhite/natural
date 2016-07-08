@@ -4,11 +4,15 @@
 		height: 1px;
 		background-color: #D8D8D8;
 		margin: 0 auto;
+		@media (max-width: 42rem) {
+			width: 80%;
+		}
 	}
 	.solutions-wins {
-		width: 42rem;
+		max-width: 42rem;
 		margin: 0 auto;
 		overflow: hidden;
+		width: 90%;
 		.solutions, .wins {
 			width: 50%;
 			float: left;
@@ -23,6 +27,11 @@
 				display: block;
 				padding: 1.4rem 1rem;
 				color: $dark_text;
+			}
+			@media (max-width: 42rem) {
+				width: 100%;
+				float: none;
+				padding: 1rem;
 			}
 		}
 	}

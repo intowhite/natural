@@ -1,12 +1,13 @@
 .Nav {
 	background-color: $navbg;
-	height: 3.45rem;
+	min-height: 3.45rem;
 	border-bottom: 1px solid $nav_border_color;
-
+	overflow: hidden;
 	.logo {
 		padding: 0.8rem 1rem;
 		img {
 			height: 1.3rem;
+			margin-top: 0.2rem;
 		}
 		display: inline-block;
 	}
@@ -46,7 +47,7 @@
 		.username, .logout {
 			display: inline-block;
 			color: lighten($light_text,10%);
-			font-size: 0.4rem;
+			font-size: 7px;
 			font-weight: 100;
 			vertical-align: middle;
 			padding: 0 0.8rem;

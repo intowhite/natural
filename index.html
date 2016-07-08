@@ -2,103 +2,156 @@
 <html lang="en" ng-app="natdemo">
 <head>
 	<meta charset="UTF-8">
-	<title>Natural</title>
+	<title>Natural solution wins!</title>
 </head>
 <body ng-controller="natController">
-	<div class="Nav">
-		<div class="logo">
-			<img src="./public/img/logo.jpg" alt="">
+	<div class="wrap">
+		<div class="Nav">
+			<div class="logo">
+				<a href="#">
+					<img src="./public/img/logo.jpg" alt="">
+				</a>
+			</div>
+			<div class="links">
+				<ul>
+					<li>
+						<a href="#">Solutions</a>
+					</li>
+					<li>
+						<a href="#">Wins</a>
+					</li>
+					<li>
+						<a href="#">People</a>
+					</li>
+					<li>
+						<a href="#">Demo Center</a>
+					</li>
+				</ul>
+			</div>
+			<div class="user">
+				<a href="#" class="userlink">
+					<img src="./public/img/avatar_cory.png" alt=""/>
+					<div class="username">Cory Micek</div>
+				</a>
+				<div class="logout"><a href="#">Log Out</a></div>
+			</div>
 		</div>
-		<div class="links">
-			<ul>
-				<li>
-					<a href="#">Solutions</a>
-				</li>
-				<li>
-					<a href="#">Wins</a>
-				</li>
-				<li>
-					<a href="#">People</a>
-				</li>
-				<li>
-					<a href="#">Demo Center</a>
-				</li>
-			</ul>
+
+		<div class="Search">
+			<input type="text" placeholder="Search Solution Center...">
 		</div>
-		<div class="user">
-			<a href="#" class="userlink">
-				<img src="./public/img/avatar_cory.png" alt=""/>
-				<div class="username">Cory Micek {{meow.cat}}</div>
-			</a>
-			<div class="logout"><a href="#">Log Out</a></div>
+
+		<div class="Hero" style="">
+			<div class="text">
+				Welcome, <span class="color">Cory!</span> What would you like to accomplish today?
+			</div>
 		</div>
-	</div>
-	<div class="Search">
-		<input type="text" placeholder="Search Solution Center...">
-	</div>
-	<div class="Hero" style="">
-		<div class="text">
-			Welcome, <span class="color">Cory!</span> What would you like to accomplish today?
-		</div>
-	</div>
-	<div class="Natural">
-		<div class="form">
-			I need a 
-			<div class="select" 
-			ng-click="select_click(select)"
-			ng-class="{'show': isShown}">
-				<div class="checked">{{checked.display}}</div>
-				<div class="options">
-					<div class="option" 
-					ng-click="category_click(category)" 
-					ng-repeat="category in categories"
-					ng-class="{checked: category==checked}">
-						{{category.display}}
+
+		<div class="Natural">
+			<div class="form">
+				I need a 
+				<div class="select category" 
+				ng-click="select_click('category')"
+				ng-class="{'show': categories.isShown}">
+					<div class="checked">{{checked_category.display}}</div>
+					<div class="options">
+						<div class="option" 
+						ng-click="category_click(category)" 
+						ng-repeat="category in categories"
+						ng-class="{checked: category==checked_category}">
+							{{category.display}}
+						</div>
+					</div>
+				</div>
+				for 
+				<div class="select industry"
+				ng-click="industries_click('industry')"
+				ng-class="{'show': industries.isShown}">
+					<div class="checked">{{checked_industry.industry}}</div>
+					<div class="options">
+						<div class="option" 
+						ng-click="industry_click(industry)" 
+						ng-repeat="industry in industries"
+						ng-class="{checked: industry==checked_industry}">
+							{{industry.industry}}
+						</div>
+					</div>
+				</div>
+				<br/>
+				and
+				<div class="select product"
+				ng-click="products_click('product')"
+				ng-class="{'show': products.isShown}">
+					<div class="checked">{{checked_product.product}}</div>
+					<div class="options">
+						<div class="option" 
+						ng-click="product_click(product)" 
+						ng-repeat="product in products"
+						ng-class="{checked: product==checked_product}">
+							{{product.product}}
+						</div>
+					</div>
+				</div>
+				.
+			</div>
+			<button ng-click="get_results()">Find it!</button>
+			<div class="results" ng-class="{show: results_show, reflow:reflow}">
+				<div class="content">
+					<div class="result" ng-repeat="result in results">
+						<div class="title">
+							<a href="/{{mode}}/products/{{result.product_id}}" class="name">
+								{{result.product}}
+							</a>
+							<a href="/{{mode}}/industries/{{result.industry_id}}" class="industry">
+								{{result.industry}}
+							</a>
+						</div>
+						<div class="display">
+							<a href="/{{mode}}/{{result.id}}">
+								{{result.name}}
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
-			for 
-			<div class="select">
-				<div class="checked">any industry</div>
-				<div class="options"></div>
-			</div>
-			<br/>
-			and
-			<div class="select">
-				<div class="checked">any product</div>
-				<div class="options"></div>
-			</div>
-			.
 		</div>
-		<button ng-click="meow()">Find it!</button>
-		<div class="results"></div>
-	</div>
-	<div class="Links">
-		<div class="line"></div>
-		<div class="solutions-wins">
-			<div class="solutions">
-				<img src="./public/img/screen-shot-2015-10-27-at-40718-p-m@3x.png" alt="">
-				<a href="#">Submit a Solution</a>
-				<a href="#">View my Solutions</a>
-			</div>
-			<div class="wins">
-				<img src="./public/img/screen-shot-2015-10-27-at-23907-p-m-copy-2@3x.png" alt="">
-				<a href="#">Submit a Solution Win</a>
-				<a href="#">View my Solution Wins</a>
+
+		<div class="Links">
+			<div class="line"></div>
+			<div class="solutions-wins">
+				<div class="solutions">
+					<img src="./public/img/screen-shot-2015-10-27-at-40718-p-m@3x.png" alt="">
+					<a href="#">Submit a Solution</a>
+					<a href="#">View my Solutions</a>
+				</div>
+				<div class="wins">
+					<img src="./public/img/screen-shot-2015-10-27-at-23907-p-m-copy-2@3x.png" alt="">
+					<a href="#">Submit a Solution Win</a>
+					<a href="#">View my Solution Wins</a>
+				</div>
 			</div>
 		</div>
 	</div>
+
 	<div class="Footer">
 		<div class="links">
 			<ul>
-				<li>Solutions</li>
-				<li>Standard View</li>
-				<li>Create an Incident</li>
+				<li><a href="#">Solutions</a></li>
+				<li><a href="#">Solution Wins</a></li>
+				<li><a href="#">People</a></li>
+				<li><a href="#">Enablement</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">Standard View</a></li>
+				<li><a href="#">Demo Center</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">Create an Incident</a></li>
 			</ul>
 		</div>
 	</div>
-	<script src="http://localhost:8080/public/bundle.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
 
+	<script src="http://localhost:8080/public/bundle.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" rel="stylesheet">
 </body>
 </html>

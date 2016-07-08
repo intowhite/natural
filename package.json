@@ -4,13 +4,10 @@
   "description": "natural language selector example",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --progress --colors --inline"
   },
   "author": "Josh Kovitz",
   "license": "ISC",
-  "scripts": {
-    "start": "webpack-dev-server --progress --colors --inline" 
-  },
   "devDependencies": {
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
@@ -25,6 +22,7 @@
   },
   "dependencies": {
     "angular": "^1.5.7",
+    "jquery": "^3.1.0",
     "lodash": "^4.13.1"
   }
 }
