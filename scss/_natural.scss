@@ -55,9 +55,9 @@
 						line-height:4rem;
 					}
 					&.checked {
-						color: $navbg;
+						color: lighten($navbg,10%);
 						text-decoration: none;
-						font-weight: 600;
+						font-weight: 400;
 						&:after {
 						    content: "\2713";
 						}
