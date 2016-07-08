@@ -6,4 +6,4 @@ npm install
 
 npm start
 
-navigate to localhost
+navigate to localhost:8080
