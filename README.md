@@ -2,6 +2,8 @@
 
 ###Instructions:
 
-> npm install
-> npm start
-> navigate to localhost
+npm install
+
+npm start
+
+navigate to localhost
